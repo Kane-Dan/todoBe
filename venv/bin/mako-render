@@ -1,4 +1,4 @@
-#!/home/kane/prjts/Todo/venv/bin/python
+#!/home/TodoDanyaBE/todoBe/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
