@@ -37,7 +37,7 @@ async def get_all_tasks():
         tasks = result.scalars().all()
         return tasks
     
-# Вывод всех тасков
+# Вывод таски по id
 @router.get("/{id}")
 async def get_all_tasks(id:int):
     async with async_session_maker() as session:
