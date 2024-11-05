@@ -37,6 +37,14 @@ async def get_all_tasks():
         tasks = result.scalars().all()
         return tasks
     
+# Вывод всех тасков
+@router.get("/{id}")
+async def get_all_tasks(id:int):
+    async with async_session_maker() as session:
+        result = await session.execute(select(Task).where(Task.id == id))
+        task = result.scalars().all()
+        return task[0]
+    
 # изменение таска
 @router.put("/update/{id}")
 async def update_post(id: int, data: TaskUpdate):
