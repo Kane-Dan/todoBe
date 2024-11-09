@@ -1,17 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional
+
 
 class UserSchema(BaseModel):
     id: int
     name: str
-    email: str
+    email: EmailStr
     number: str
     hashed_password: str
     is_active: bool
 
-class UserCreateSchema(BaseModel):
-    name: str
-    email: str
-    number: str
-    password: str
-    is_active: Optional[bool] = True  # Поле необязательно, по умолчанию True
+
+
+
