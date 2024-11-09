@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 from src.users.router import router as users_router
+from src.auth.router import router as auth_router
 from src.tasks.router import router as task_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-app.include_router(task_router, prefix= "/tasks")
-app.include_router(users_router, prefix="/users")
+app.include_router(task_router, prefix= "/tasks", tags=["Tasks"])
+app.include_router(users_router, prefix="/users", tags=["Users"])
+app.include_router(auth_router, prefix="/auth", tags=["Auth"])
 
 
 origins = [

@@ -18,4 +18,4 @@ async def get_user(id: int):
 
 @router.delete("/delete/{id}")
 async def delete_user(id:int):
-    return await UsersSercvices.delete_user(id)
+    return await UsersSercvices.delete_user_by_id(id)
